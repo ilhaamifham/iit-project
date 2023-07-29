@@ -1,0 +1,193 @@
+/* Variables */
+
+:root {
+  --backgroundColor: #ffffff;
+  --color: #333333;
+  --headingColor: #000000;
+  --addButton: green;
+  --removeButton: red;
+  --showButton: #0073e6;
+}
+
+/* Reset */
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  font: inherit;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 100%;
+}
+
+body {
+  line-height: 1.5;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  line-height: 1;
+}
+
+/* Typography */
+
+body {
+  background-color: var(--backgroundColor);
+  color: var(--color);
+  font-family: sans-serif;
+  padding: 1rem;
+}
+
+h1,
+h2,
+h3 {
+  font-weight: 800;
+  margin-bottom: 1rem;
+  color: var(--headingColor);
+}
+
+h1 {
+  font-size: 2.875rem;
+  text-align: center;
+  margin-bottom: 3rem;
+  font-family: monospace;
+}
+
+h2 {
+  font-size: 1.875rem;
+}
+
+h3 {
+  font-size: 1.375rem;
+}
+
+/* Cart Form */
+
+.cart {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+.cart_item_form,
+.cart_items {
+  text-align: center;
+  max-width: 380px;
+  padding: 1rem;
+  width: 100%;
+}
+
+input[type="text"],
+input[type="number"] {
+  display: block;
+  width: 100%;
+  padding: 1rem;
+  border-radius: 10px;
+  border: 2px solid var(--headingColor);
+  margin-bottom: 1rem;
+  background-color: var(--extraColor);
+  color: var(--headingColor);
+}
+
+button {
+  border: none;
+  cursor: pointer;
+  display: block;
+  width: 100%;
+  border-radius: 10px;
+  border: none;
+  padding: 1rem;
+  text-align: center;
+  font-weight: 600;
+  color: var(--backgroundColor);
+  transition: 0.5s;
+  white-space: nowrap;
+}
+
+button:hover {
+  opacity: 0.5;
+}
+
+.add_item {
+  margin: 2rem 0;
+}
+
+.item_lists {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.item_lists h3 {
+  margin-bottom: 0;
+}
+
+.item_lists button {
+  width: auto;
+  background-color: var(--showButton);
+  border-radius: 10px;
+  padding: 0.5rem 1rem;
+}
+
+.add_item button {
+  background-color: var(--addButton);
+}
+
+.remove_item button {
+  background-color: var(--removeButton);
+}
+
+table {
+  width: 100%;
+  margin-top: 1rem;
+}
+
+th {
+  font-weight: 600;
+  color: var(--headingColor);
+}
+
+td,
+th {
+  padding: 0.7rem;
+  text-align: center;
+}
+
+i {
+  color: var(--backgroundColor);
+  margin-right: 0.5rem;
+}
+
+@media screen and (min-width: 768px) {
+  .cart {
+    flex-direction: row;
+    align-items: baseline;
+    justify-content: space-evenly;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --backgroundColor: #000000;
+    --color: #cccccc;
+    --headingColor: #ffffff;
+    --addButton: hsl(120, 75%, 25%);
+    --removeButton: hsl(0, 75%, 50%);
+    --showButton: #0073e6;
+    --extraColor: #454545;
+  }
+
+  button,
+  i {
+    color: var(--headingColor);
+  }
+}

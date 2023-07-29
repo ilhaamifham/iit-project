@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cart</title>
+    <link rel="stylesheet" href="styles/normalize.css" />
+    <link rel="stylesheet" href="styles/style.css" />
+    <script
+      src="https://kit.fontawesome.com/0d4c44bfd1.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <h1>Cart</h1>
+    <div class="cart">
+      <section class="cart_item_form">
+        <h2>Item Form</h2>
+
+        <!-- Add Item Section -->
+
+        <section class="add_item">
+          <h3>Add Item</h3>
+          <form id="addForm">
+            <input
+              type="text"
+              id="itemName"
+              placeholder="Item name"
+              value=""
+              required
+            />
+            <input
+              type="number"
+              id="itemQty"
+              placeholder="Item qty"
+              value=""
+              min="1"
+              max="100"
+              required
+            />
+            <button type="submit">Add</button>
+          </form>
+        </section>
+
+        <!-- Remove Item Section -->
+
+        <section class="remove_item">
+          <h3>Remove Item</h3>
+          <form id="removeForm">
+            <input
+              type="number"
+              id="itemId"
+              placeholder="Item id"
+              value=""
+              min="1"
+              required
+            />
+            <button type="submit">Remove</button>
+          </form>
+        </section>
+      </section>
+      <section class="cart_items">
+        <h2>Items</h2>
+        <section class="item_lists">
+          <h3>Item Lists</h3>
+
+          <!-- Show Items Button -->
+
+          <button id="showItems"><i class="fa-solid fa-cart-shopping"></i>Show Items</button>
+        </section>
+
+        <!-- Display Cart Items -->
+
+        <table>
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Item Name</th>
+              <th>Item Quantity</th>
+            </tr>
+          </thead>
+          <tbody id="cartTable"></tbody>
+        </table>
+    </div>
+    <script src="scripts/script.js"></script>
+  </body>
+</html>
