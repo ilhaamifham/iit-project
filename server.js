@@ -3,6 +3,7 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const sqlite3 = require("sqlite3").verbose();
+const path = require("path");
 
 // Create an instance of Express.js
 
@@ -18,9 +19,18 @@ let cartItems = [];
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
-// Serve the static HTML file
+// Serve the index.html file from the "IIT-PROJECT" directory
 
-app.use(express.static("cart"));
+const projectDirectory = __dirname;
+app.use(express.static(projectDirectory));
+
+// Serve the CSS and JavaScript files from their respective directories
+
+const stylesDirectory = path.join(projectDirectory, "styles");
+app.use("/styles", express.static(stylesDirectory));
+
+const scriptsDirectory = path.join(projectDirectory, "scripts");
+app.use("/scripts", express.static(scriptsDirectory));
 
 // Initialize the SQLite database
 
@@ -102,7 +112,7 @@ app.get("/cart/show", (req, res) => {
 // Default route handler for GET requests
 
 app.get("*", (req, res) => {
-  res.sendFile(__dirname + "/cart/index.html");
+  res.sendFile(__dirname + "/index.html");
 });
 
 // Start the server
